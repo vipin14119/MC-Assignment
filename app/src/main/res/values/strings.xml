@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Its T or F</string>
+    <string name="number">123</string>
+    <string name="false_button">FALSE</string>
+    <string name="true_button">TRUE</string>
+    <string name="next_button">NEXT</string>
 </resources>
