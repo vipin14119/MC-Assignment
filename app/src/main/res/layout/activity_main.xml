@@ -6,45 +6,49 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="40dp"
     tools:context="com.example.vipin.itstorf.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/number"
-        android:id="@+id/textView"
-        android:layout_marginTop="83dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <Button
-        style="@style/Widget.AppCompat.Button.Colored"
+        android:drawableEnd="@drawable/next_icon"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/false_button"
-        android:id="@+id/button"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="47dp" />
-
-    <Button
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
+        android:paddingRight="100dp"
+        android:paddingLeft="100dp"
         android:text="@string/next_button"
-        android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
+        android:id="@+id/button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
-    <Button
+    <EditText
+
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next_button"
-        android:id="@+id/button3"
+        android:layout_height="150dp"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText"
         android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp"
-        />
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/button" />
+
+    <Button
+        android:paddingTop="50dp"
+        android:drawableTop="@drawable/dislike"
+        android:layout_width="178dp"
+        android:layout_height="200dp"
+        android:text="@string/false_button"
+        android:id="@+id/button2"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:paddingTop="50dp"
+        android:drawableTop="@drawable/like"
+        android:layout_width="178dp"
+        android:layout_height="200dp"
+        android:text="@string/true_button"
+        android:id="@+id/button3"
+        android:layout_alignTop="@+id/button2"
+        android:layout_alignEnd="@+id/editText" />
 </RelativeLayout>
