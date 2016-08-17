@@ -2,12 +2,113 @@ package com.example.vipin.itstorf;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    public String msg = "Android : ";
+    public int mcurrent_number;
+    static final String CURRENT_NUMBER="Current random number";
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        savedInstanceState.putInt(CURRENT_NUMBER, mcurrent_number);
+        super.onSaveInstanceState(savedInstanceState);
+    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if(savedInstanceState != null){
+            mcurrent_number = savedInstanceState.getInt(CURRENT_NUMBER);
+        }
+        else{
+            Random r = new Random();
+            mcurrent_number = r.nextInt(1000-1)+1;
+        }
+        print_number();
+        Log.d(msg, "On Create Invoked");
     }
+    @Override
+    public void onStart(){
+        super.onStart();
+        Log.d(msg, " OnStart invoked");
+
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        Log.d(msg, " OnResume invoked");
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        Log.d(msg, " OnPause invoked");
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        Log.d(msg, " OnStop invoked");
+    }
+
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        Log.d(msg, " OnDestroy invoked");
+    }
+    ///////////////////
+    public void print_number(){
+        final TextView field = (TextView)findViewById(R.id.number);
+        field.setText(mcurrent_number+"");
+    }
+    public void listen_false(View v){
+        if (!isPrime()){
+            Toast.makeText(getApplicationContext(), "Yes! You are Right", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Oops! you are wrong", Toast.LENGTH_SHORT).show();
+        }
+        Random r = new Random();
+        mcurrent_number = r.nextInt(1000-1)+1;
+        print_number();
+
+    }
+    public void listen_true(View v){
+        if (isPrime()){
+            Toast.makeText(getApplicationContext(), "Yes! You are Right", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Oops! you are wrong", Toast.LENGTH_SHORT).show();
+        }
+        Random r = new Random();
+        mcurrent_number = r.nextInt(1000-1)+1;
+        print_number();
+
+    }
+    public void listen_next(View v){
+        Toast.makeText(getApplicationContext(), "You Clicked Next", Toast.LENGTH_LONG).show();
+        Random r = new Random();
+        mcurrent_number = r.nextInt(1000-1)+1;
+        print_number();
+    }
+    //checks whether an int is prime or not.
+    boolean isPrime() {
+        int n =mcurrent_number;
+        if (n%2==0) return false;
+        for(int i=3;i*i<=n;i+=2) {
+            if(n%i==0)
+                return false;
+        }
+        return true;
+    }
+
 }
