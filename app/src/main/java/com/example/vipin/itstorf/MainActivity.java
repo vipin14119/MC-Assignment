@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String msg = "Android : ";
+    private static final String msg = "Android : ";
     private  int m_current_number;
     private static final String CURRENT_NUMBER="Current random number";
 
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(msg, " OnDestroy invoked");
     }
     ///////////////////
-    public void print_number(){
+    private void print_number(){
         final TextView field = (TextView)findViewById(R.id.number);
         String m_screen_value = m_current_number+"";
         field.setText(m_screen_value);
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void listen_next(View v){
-        Toast.makeText(getApplicationContext(), "You Clicked Next", Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), "You Clicked Next", Toast.LENGTH_LONG).show();
         Random r = new Random();
         m_current_number = r.nextInt(1000-1)+1;
         print_number();
