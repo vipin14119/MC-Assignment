@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         String m_screen_value = m_current_number+"";
         field.setText(m_screen_value);
     }
-    public void listen_false(){
+    public void listen_false(View v){
         if (!isPrime()){
             Toast.makeText(getApplicationContext(), "Yes! You are Right", Toast.LENGTH_SHORT).show();
         }
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         print_number();
 
     }
-    public void listen_true(){
+    public void listen_true(View v){
         if (isPrime()){
             Toast.makeText(getApplicationContext(), "Yes! You are Right", Toast.LENGTH_SHORT).show();
         }
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         print_number();
 
     }
-    public void listen_next(){
+    public void listen_next(View v){
 //        Toast.makeText(getApplicationContext(), "You Clicked Next", Toast.LENGTH_LONG).show();
         Random r = new Random();
         m_current_number = r.nextInt(1000-1)+1;
