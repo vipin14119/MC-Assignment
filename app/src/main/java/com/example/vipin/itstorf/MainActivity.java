@@ -11,13 +11,13 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    public String msg = "Android : ";
-    public int mcurrent_number;
-    static final String CURRENT_NUMBER="Current random number";
+    private static final String msg = "Android : ";
+    private  int m_current_number;
+    private static final String CURRENT_NUMBER="Current random number";
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
-        savedInstanceState.putInt(CURRENT_NUMBER, mcurrent_number);
+        savedInstanceState.putInt(CURRENT_NUMBER, m_current_number);
         super.onSaveInstanceState(savedInstanceState);
     }
     @Override
@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if(savedInstanceState != null){
-            mcurrent_number = savedInstanceState.getInt(CURRENT_NUMBER);
+            m_current_number = savedInstanceState.getInt(CURRENT_NUMBER);
         }
         else{
             Random r = new Random();
-            mcurrent_number = r.nextInt(1000-1)+1;
+            m_current_number = r.nextInt(1000-1)+1;
         }
         print_number();
         Log.d(msg, "On Create Invoked");
@@ -66,9 +66,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d(msg, " OnDestroy invoked");
     }
     ///////////////////
-    public void print_number(){
+    private void print_number(){
         final TextView field = (TextView)findViewById(R.id.number);
-        field.setText(mcurrent_number+"");
+        String m_screen_value = m_current_number+"";
+        field.setText(m_screen_value);
     }
     public void listen_false(View v){
         if (!isPrime()){
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Oops! you are wrong", Toast.LENGTH_SHORT).show();
         }
         Random r = new Random();
-        mcurrent_number = r.nextInt(1000-1)+1;
+        m_current_number = r.nextInt(1000-1)+1;
         print_number();
 
     }
@@ -90,19 +91,19 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Oops! you are wrong", Toast.LENGTH_SHORT).show();
         }
         Random r = new Random();
-        mcurrent_number = r.nextInt(1000-1)+1;
+        m_current_number = r.nextInt(1000-1)+1;
         print_number();
 
     }
     public void listen_next(View v){
-        Toast.makeText(getApplicationContext(), "You Clicked Next", Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), "You Clicked Next", Toast.LENGTH_LONG).show();
         Random r = new Random();
-        mcurrent_number = r.nextInt(1000-1)+1;
+        m_current_number = r.nextInt(1000-1)+1;
         print_number();
     }
     //checks whether an int is prime or not.
-    boolean isPrime() {
-        int n =mcurrent_number;
+    private boolean isPrime() {
+        int n =m_current_number;
         if (n%2==0) return false;
         for(int i=3;i*i<=n;i+=2) {
             if(n%i==0)
