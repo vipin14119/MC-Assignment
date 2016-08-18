@@ -6,27 +6,29 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="40dp"
+    android:paddingTop="10dp"
     tools:context="com.example.vipin.itstorf.MainActivity">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:drawableTop="@drawable/next_landscape"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:paddingTop="30dp"
         android:paddingRight="100dp"
         android:paddingLeft="100dp"
         android:text="@string/next_button"
         android:id="@+id/button"
+        android:onClick="listen_next"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:onClick="listen_next"/>
+        android:layout_alignBottom="@+id/number" />
 
     <TextView
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="@color/darkalley"
         android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_height="140dp"
         android:ems="10"
         android:text="3421"
         android:fontFamily="cursive"
@@ -34,12 +36,13 @@
         android:textSize="60sp"
         android:textColor="@color/lightfont"
         android:id="@+id/number"
-        android:layout_below="@+id/button"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/button" />
+        android:layout_toStartOf="@+id/button"
+        android:layout_alignParentTop="true" />
 
     <Button
-        android:paddingTop="50dp"
+
+        android:paddingTop="30dp"
         android:drawableTop="@drawable/dislike"
         android:layout_width="180dp"
         android:layout_height="200dp"
@@ -47,16 +50,18 @@
         android:id="@+id/button2"
         android:layout_below="@+id/number"
         android:layout_alignParentStart="true"
-        android:onClick="listen_false"/>
+        android:onClick="listen_false"
+        android:layout_alignEnd="@+id/number" />
 
     <Button
-        android:paddingTop="50dp"
+        android:paddingTop="30dp"
         android:drawableTop="@drawable/like"
         android:layout_width="180dp"
         android:layout_height="200dp"
         android:text="@string/true_button"
         android:id="@+id/button3"
-        android:layout_alignTop="@+id/button2"
-        android:layout_alignEnd="@+id/number"
-        android:onClick="listen_true"/>
+        android:onClick="listen_true"
+        android:layout_below="@+id/number"
+        android:layout_alignStart="@+id/button"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
