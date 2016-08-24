@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -72,11 +71,17 @@ public class MainActivity extends AppCompatActivity {
         field.setText(m_screen_value);
     }
     public void listen_false(View v){
+        TextView screen = (TextView)findViewById(R.id.number);
         if (!isPrime()){
             Toast.makeText(getApplicationContext(), "Yes! You are Right", Toast.LENGTH_SHORT).show();
+            screen.setBackground(getResources().getDrawable(R.drawable.correct_number_screen));
+            screen.setTextColor(getResources().getColor(R.color.white_text));
+
         }
         else{
             Toast.makeText(getApplicationContext(), "Oops! you are wrong", Toast.LENGTH_SHORT).show();
+            screen.setBackground(getResources().getDrawable(R.drawable.wrong_number_screen));
+            screen.setTextColor(getResources().getColor(R.color.white_text));
         }
         Random r = new Random();
         m_current_number = r.nextInt(1000-1)+1;
@@ -84,11 +89,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void listen_true(View v){
+        TextView screen = (TextView)findViewById(R.id.number);
         if (isPrime()){
             Toast.makeText(getApplicationContext(), "Yes! You are Right", Toast.LENGTH_SHORT).show();
+            screen.setBackground(getResources().getDrawable(R.drawable.correct_number_screen));
+            screen.setTextColor(getResources().getColor(R.color.white_text));
         }
         else{
             Toast.makeText(getApplicationContext(), "Oops! you are wrong", Toast.LENGTH_SHORT).show();
+            screen.setBackground(getResources().getDrawable(R.drawable.wrong_number_screen));
+            screen.setTextColor(getResources().getColor(R.color.white_text));
         }
         Random r = new Random();
         m_current_number = r.nextInt(1000-1)+1;
@@ -96,7 +106,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void listen_next(View v){
-//        Toast.makeText(getApplicationContext(), "You Clicked Next", Toast.LENGTH_LONG).show();
+        TextView screen = (TextView)findViewById(R.id.number);
+        screen.setBackground(getResources().getDrawable(R.drawable.number_screen));
+        screen.setTextColor(getResources().getColor(R.color.light_font));
         Random r = new Random();
         m_current_number = r.nextInt(1000-1)+1;
         print_number();
