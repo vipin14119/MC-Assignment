@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="dark_alley">#333</color>
     <color name="light_font">#fffb00</color>
+    <color name="trans_white">#a6ffffff</color>
+    <color name="text_orange">#c15c1d</color>
 </resources>
