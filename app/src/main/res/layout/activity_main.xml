@@ -9,65 +9,76 @@
     android:paddingTop="40dp"
     android:background="@drawable/bg"
     tools:context="com.example.vipin.itstorf.MainActivity">
-
-    <Button
-        android:drawableEnd="@drawable/next_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:paddingRight="100dp"
-        android:paddingLeft="100dp"
-        android:text="@string/next_button"
-        android:textColor="@color/text_orange"
-        android:id="@+id/button"
-        android:textSize="25sp"
-        android:background="@color/trans_white"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="listen_next"/>
-
     <TextView
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/dark_alley"
+        android:background="@drawable/number_screen"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:ems="10"
         android:text="@string/number"
-        android:fontFamily="cursive"
+        android:fontFamily="serif"
         android:gravity="center"
         android:textSize="60sp"
         android:textColor="@color/light_font"
         android:id="@+id/number"
-        android:layout_below="@+id/button"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/button" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:paddingTop="50dp"
-        android:drawableTop="@drawable/dislike"
         android:layout_width="170dp"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:text="@string/false_button"
         android:textSize="25sp"
         android:textColor="@color/text_orange"
         android:id="@+id/button2"
-        android:background="@color/trans_white"
-        android:layout_below="@+id/number"
-        android:layout_alignParentStart="true"
-        android:onClick="listen_false"/>
+        android:background="@drawable/rounded_corners_button"
+        android:onClick="listen_false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:paddingTop="50dp"
-        android:drawableTop="@drawable/like"
         android:layout_width="170dp"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:text="@string/true_button"
         android:textSize="25sp"
-        android:background="@color/trans_white"
+        android:background="@drawable/rounded_corners_button"
         android:textColor="@color/text_orange"
         android:id="@+id/button3"
         android:layout_alignTop="@+id/button2"
         android:layout_alignEnd="@+id/number"
         android:onClick="listen_true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbutton"
+        android:text="@string/cheat_button"
+        android:id="@+id/button4"
+        android:textColor="@color/text_orange"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbutton"
+        android:text="@string/hint_button"
+        android:id="@+id/button5"
+        android:textColor="@color/text_orange"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbutton"
+        android:text="@string/next_button"
+        android:id="@+id/button6"
+        android:textColor="@color/text_orange"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
