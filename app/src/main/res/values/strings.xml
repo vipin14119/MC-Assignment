@@ -6,4 +6,8 @@
     <string name="next_button">NEXT</string>
     <string name="hint_button">HINT</string>
     <string name="cheat_button">CHEAT</string>
+
+    <string name="title_activity_hint_">Hint_Activity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">HINT\nCONTENT</string>
 </resources>

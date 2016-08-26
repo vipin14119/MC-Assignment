@@ -1,9 +1,11 @@
 package com.example.vipin.itstorf;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Random;
@@ -13,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String msg = "Android : ";
     private  int m_current_number;
     private static final String CURRENT_NUMBER="Current random number";
+    public static final String HINT_NUMBER="Current hinted number";
+
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
@@ -122,6 +126,11 @@ public class MainActivity extends AppCompatActivity {
                 return false;
         }
         return true;
+    }
+    public void take_hint(View v){
+        Intent intent = new Intent(this, Hint_Activity.class);
+        intent.putExtra(HINT_NUMBER, m_current_number);
+        startActivity(intent);
     }
 
 }
