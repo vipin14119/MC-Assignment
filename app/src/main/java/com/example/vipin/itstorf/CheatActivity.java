@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class CheatActivity extends AppCompatActivity {
     public int m_current_number;
     public int cheat_taken=-1;
@@ -50,7 +52,17 @@ public class CheatActivity extends AppCompatActivity {
         else{
             cheat_taken = 1;
             TextView text_f = (TextView)findViewById(R.id.cheat_content);
-            String res = "Can be Divided by 2 and 4";
+            ArrayList<Integer> arr = get_factors();
+            String res="Divisors are ";
+            if (arr.size() > 0){
+                for(int i:arr){
+                    res+=", "+i;
+                }
+            }
+            else{
+                res = "There is no divisor of this number";
+            }
+
             text_f.setText(res);
 
         }
@@ -63,5 +75,14 @@ public class CheatActivity extends AppCompatActivity {
         intent.putExtra(CHEAT_FLAG, true);
         setResult(RESULT_OK, intent);
         finish();
+    }
+    public ArrayList<Integer> get_factors(){
+        ArrayList<Integer> arr = new ArrayList<>();
+        for(int i=2;i<m_current_number;i++){
+            if(m_current_number%i==0){
+                arr.add(i);
+            }
+        }
+        return arr;
     }
 }

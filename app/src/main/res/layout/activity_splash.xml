@@ -5,6 +5,7 @@
     android:theme="@style/Theme.AppCompat">
 
     <ImageView
+        android:contentDescription="@string/description"
         android:id="@+id/imgLogo"
         android:layout_width="480dp"
         android:layout_height="500dp"
