@@ -4,4 +4,15 @@
     <string name="false_button">FALSE</string>
     <string name="true_button">TRUE</string>
     <string name="next_button">NEXT</string>
+    <string name="hint_button">HINT</string>
+    <string name="cheat_button">CHEAT</string>
+
+    <string name="title_activity_hint_">Hint_Activity</string>
+    <string name="dummy_number">234</string>
+    <string name="reveal_cheat">REVEAL CHEAT</string>
+    <string name="dummy_text">234</string>
+    <string name="hint_data">A PRIME NUMBER IS A NUMBER WHICH CANNOT BE DIVIDED BY ANY OTHER NUMBER OTHER THAN 1 OR ITSELF</string>
+    <string name="description">This Image is for Splash Screen</string>
+    <string name="title_activity_hint">HintActivity</string>
+    <string name="title_activity_cheat">CheatActivity</string>
 </resources>
