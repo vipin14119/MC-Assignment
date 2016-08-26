@@ -34,7 +34,8 @@
         <activity
             android:name=".CheatActivity"
             android:label="@string/title_activity_cheat"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

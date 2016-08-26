@@ -2,11 +2,11 @@ package com.example.vipin.itstorf;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Random;
@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private  int m_current_number;
     private static final String CURRENT_NUMBER="Current random number";
     public static final String HINT_NUMBER="Current hinted number";
-    public boolean cheat_flag = false;
-    public boolean hint_flag = false;
+    private boolean cheat_flag = false;
+    private boolean hint_flag = false;
 
 
     @Override
@@ -75,20 +75,29 @@ public class MainActivity extends AppCompatActivity {
     private void print_number(){
         final TextView field = (TextView)findViewById(R.id.number);
         String m_screen_value = m_current_number+"";
-        field.setText(m_screen_value);
+        if (field!=null){
+            field.setText(m_screen_value);
+        }
+
     }
     public void listen_false(View v){
         TextView screen = (TextView)findViewById(R.id.number);
         if (!isPrime()){
             Toast.makeText(getApplicationContext(), "Yes! You are Right", Toast.LENGTH_SHORT).show();
-            screen.setBackground(getResources().getDrawable(R.drawable.correct_number_screen));
-            screen.setTextColor(getResources().getColor(R.color.white_text));
+            if(screen!=null){
+                screen.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.correct_number_screen, null));
+                screen.setTextColor(ResourcesCompat.getColor(getResources(), R.color.white_text, null));
+            }
+
 
         }
         else{
             Toast.makeText(getApplicationContext(), "Oops! you are wrong", Toast.LENGTH_SHORT).show();
-            screen.setBackground(getResources().getDrawable(R.drawable.wrong_number_screen));
-            screen.setTextColor(getResources().getColor(R.color.white_text));
+            if (screen!=null){
+                screen.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.wrong_number_screen, null));
+                screen.setTextColor(ResourcesCompat.getColor(getResources(), R.color.white_text, null));
+            }
+
         }
         Random r = new Random();
         m_current_number = r.nextInt(1000-1)+1;
@@ -101,13 +110,19 @@ public class MainActivity extends AppCompatActivity {
         TextView screen = (TextView)findViewById(R.id.number);
         if (isPrime()){
             Toast.makeText(getApplicationContext(), "Yes! You are Right", Toast.LENGTH_SHORT).show();
-            screen.setBackground(getResources().getDrawable(R.drawable.correct_number_screen));
-            screen.setTextColor(getResources().getColor(R.color.white_text));
+            if (screen!=null){
+                screen.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.correct_number_screen, null));
+                screen.setTextColor(ResourcesCompat.getColor(getResources(), R.color.white_text, null));
+            }
+
         }
         else{
             Toast.makeText(getApplicationContext(), "Oops! you are wrong", Toast.LENGTH_SHORT).show();
-            screen.setBackground(getResources().getDrawable(R.drawable.wrong_number_screen));
-            screen.setTextColor(getResources().getColor(R.color.white_text));
+            if(screen!=null){
+                screen.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.wrong_number_screen, null));
+                screen.setTextColor(ResourcesCompat.getColor(getResources(), R.color.white_text, null));
+            }
+
         }
         Random r = new Random();
         m_current_number = r.nextInt(1000-1)+1;
@@ -118,8 +133,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void listen_next(View v){
         TextView screen = (TextView)findViewById(R.id.number);
-        screen.setBackground(getResources().getDrawable(R.drawable.number_screen));
-        screen.setTextColor(getResources().getColor(R.color.light_font));
+        if (screen!=null){
+            screen.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.number_screen, null));
+            screen.setTextColor(ResourcesCompat.getColor(getResources(), R.color.light_font, null));
+        }
         Random r = new Random();
         m_current_number = r.nextInt(1000-1)+1;
         print_number();
