@@ -70,7 +70,7 @@
     <Button
         android:background="@drawable/rounded_corners_button"
         android:layout_width="wrap_content"
-        android:layout_height="75dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:text="@string/hint_button"
         android:id="@+id/hint_button"
@@ -78,7 +78,8 @@
         android:textSize="20sp"
         android:layout_alignTop="@+id/true_button"
         android:layout_alignEnd="@+id/cheat_button"
-        android:layout_toEndOf="@+id/true_button" />
+        android:layout_toEndOf="@+id/true_button"
+        android:onClick="take_hint"/>
 
     <Button
         android:background="@drawable/rounded_corners_button"
@@ -91,5 +92,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/next_button"
         android:layout_toEndOf="@+id/true_button"
-        android:layout_below="@+id/hint_button" />
+        android:layout_below="@+id/hint_button"
+        android:onClick="take_cheat"/>
 </RelativeLayout>
