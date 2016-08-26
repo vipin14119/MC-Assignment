@@ -59,6 +59,7 @@
         android:textSize="20sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:onClick="take_cheat"
         />
     <Button
         android:layout_width="wrap_content"

@@ -23,20 +23,20 @@ public class MainActivity extends AppCompatActivity {
         savedInstanceState.putInt(CURRENT_NUMBER, m_current_number);
         super.onSaveInstanceState(savedInstanceState);
     }
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        if(savedInstanceState != null){
-            m_current_number = savedInstanceState.getInt(CURRENT_NUMBER);
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            if(savedInstanceState != null){
+                m_current_number = savedInstanceState.getInt(CURRENT_NUMBER);
+            }
+            else{
+                Random r = new Random();
+                m_current_number = r.nextInt(1000-1)+1;
+            }
+            print_number();
+            Log.d(msg, "On Create Invoked");
         }
-        else{
-            Random r = new Random();
-            m_current_number = r.nextInt(1000-1)+1;
-        }
-        print_number();
-        Log.d(msg, "On Create Invoked");
-    }
     @Override
     public void onStart(){
         super.onStart();
@@ -128,7 +128,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     public void take_hint(View v){
-        Intent intent = new Intent(this, Hint_Activity.class);
+        Intent intent = new Intent(this, HintActivity.class);
+        intent.putExtra(HINT_NUMBER, m_current_number);
+        startActivity(intent);
+    }
+    public void take_cheat(View v){
+        Intent intent = new Intent(this, CheatActivity.class);
         intent.putExtra(HINT_NUMBER, m_current_number);
         startActivity(intent);
     }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg"
+    tools:context="com.example.vipin.itstorf.CheatActivity">
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:id="@+id/cheat_number"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:keepScreenOn="true"
+        android:text="234"
+        android:textColor="#FFF"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/cheat_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="Can be Divided by 2 and 4"
+        android:textColor="#FFF"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+</android.support.design.widget.CoordinatorLayout>

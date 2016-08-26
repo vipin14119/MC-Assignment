@@ -9,5 +9,8 @@
 
     <string name="title_activity_hint_">Hint_Activity</string>
     <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">HINT\nCONTENT</string>
+    <string name="hint_data">A PRIME NUMBER IS A NUMBER WHICH CANNOT BE DIVIDED BY ANY OTHER NUMBER OTHER THAN 1 OR ITSELF</string>
+
+    <string name="title_activity_hint">HintActivity</string>
+    <string name="title_activity_cheat">CheatActivity</string>
 </resources>
