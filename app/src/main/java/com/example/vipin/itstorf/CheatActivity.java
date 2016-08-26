@@ -41,7 +41,17 @@ public class CheatActivity extends AppCompatActivity {
 
         if (savedInstanceState != null){
             TextView text_f2 = (TextView)findViewById(R.id.cheat_content);
-            String res2 = "Can be Divided by 2 and 4";
+            ArrayList<Integer> arr = get_factors();
+            String res2="Divisors are ";
+            if (arr.size() > 0){
+                for(int i:arr){
+                    res2+=", "+i;
+                }
+            }
+            else{
+                res2 = "There is no divisor of this number";
+            }
+
             if(text_f2!=null){
                 text_f2.setText(res2);
             }
